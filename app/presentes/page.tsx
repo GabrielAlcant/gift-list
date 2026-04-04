@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,39 +11,115 @@ export default function GiftList() {
   const [gifts, setGifts] = useState([
     {
       id: 1,
-      name: "Conjunto de Panelas",
-      description: "Perfeito para preparar refeições especiais juntos.",
-      price: "R$ 600,00",
-      chosen: false,
+      name: "Aspirador de Pó",
+      description: "Praticidade para manter a casa sempre limpa.",
+      price: "R$ 139,00",      image: "/images/products/aspirador.webp",      chosen: false,
     },
     {
       id: 2,
-      name: "Jogo de Cama Queen",
-      description: "Conforto e elegância para o novo lar.",
-      price: "R$ 350,00",
+      name: "Cafeteira Elétrica",
+      description: "Para começar as manhãs com mais sabor.",
+      price: "R$ 489,00",
+      image: "/images/products/cafeteira eletrica.webp",
       chosen: false,
     },
     {
       id: 3,
-      name: "Cafeteira Elétrica",
-      description: "Para começar as manhãs com mais sabor.",
-      price: "R$ 420,00",
+      name: "Micro-ondas",
+      description: "Facilita o dia a dia com rapidez e eficiência.",
+      price: "R$ 1229,00",
+      image: "/images/products/micro-ondas.webp",
       chosen: false,
     },
     {
       id: 4,
-      name: "Liquidificador",
-      description: "Ideal para sucos e receitas rápidas.",
-      price: "R$ 280,00",
+      name: "Lava-Louças",
+      description: "Economia de tempo e água para a rotina do casal.",
+      price: "R$ 1957,00",
+      image: "/images/products/lava louças.avif",
       chosen: false,
     },
     {
       id: 5,
-      name: "Experiência Romântica",
-      description: "Jantar especial ou viagem inesquecível.",
-      price: "Valor livre",
+      name: "Lavadora de Roupas",
+      description: "Praticidade para cuidar das roupas do casal.",
+      price: "R$ 1998,00",
+      image: "/images/products/lavadoura de roupas.avif",
       chosen: false,
     },
+    {
+      id: 6,
+      name: "Jogo/Kit pano de prato",
+      description: "Conjunto de panos de prato para a cozinha do casal.",
+      price: "R$ 98,00",
+      image: "/images/products/pano de prato.webp",
+      chosen: false,
+    },
+    {
+      id: 7,
+      name: "Grill Elétrico",
+      description: "Para preparar refeições deliciosas e saudáveis.",
+      price: "R$ 222,00",
+      image: "/images/products/grill eletrico.jpg",
+      chosen: false,
+    },
+    {
+      id: 8,
+      name: "Fritadeira Airfryer",
+      description: "Cozinhar de forma mais saudável e prática.",
+      price: "R$ 329,00",
+      image: "/images/products/air fryer.jpg",
+      chosen: false,
+
+    },
+    {
+      id: 9,
+      name: "Liquidificador",
+      description: "Ideal para preparar sucos, vitaminas e receitas diversas.",
+      price: "R$ 139,00",
+      image: "/images/products/liquidificador.webp",
+      chosen: false,
+    },
+    {
+      id: 10,
+      name: "Batedeira",
+      description: "Perfeita para preparar bolos, massas e muito mais.",
+      price: "R$ 89,00",
+      image: "/images/products/batedeira.avif",
+      chosen: false,
+    },
+    {
+      id: 11,
+      name: "Roupão de Banho",
+      description: "Conforto e estilo para os momentos de relaxamento.",
+      price: "R$ 79,00",
+      image: "/images/products/roupao de banho.jpg",
+      chosen: false,
+    },
+    {
+      id: 12,
+      name: "Smart TV",
+      description: "Entretenimento de qualidade para o casal.",
+      price: "R$ 1498,00",
+      image: "/images/products/smart tv.avif",
+      chosen: false,
+    },
+    {
+      id: 13,
+      name: "Edredom Casal",
+      description: "Conforto e estilo para os momentos de relaxamento.",
+      price: "R$ 109,00",
+      image: "/images/products/edredom casal.jpg",
+      chosen: false,
+    },
+    {
+      id: 14,
+      name: "Jogo de Cama Casal",
+      description: "Conjunto de cama para o conforto do casal.",
+      price: "R$ 199,00",
+      image: "/images/products/jogo de cama casal.jpg",
+      chosen: false,
+    }
   ]);
 
   function chooseGift(id: number) {
@@ -69,6 +146,14 @@ export default function GiftList() {
         {gifts.map((gift) => (
           <Card key={gift.id} className="rounded-2xl shadow-md">
             <CardContent className="p-6 flex flex-col h-full">
+              <div className="relative h-40 w-full rounded-xl overflow-hidden mb-4">
+                <Image
+                  src={gift.image}
+                  alt={gift.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <h2 className="text-xl font-semibold mb-2">{gift.name}</h2>
               <p className="text-gray-600 flex-grow">{gift.description}</p>
               <span className="font-bold text-green-700 mt-4">

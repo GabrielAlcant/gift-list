@@ -1,7 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import casal1 from "../images/casal/casal1.jpeg";
+import casal2 from "../images/casal/casal2.jpeg";
+import casal3 from "../images/casal/casal3.jpeg";
 
 export default function Home() {
   const router = useRouter();
@@ -19,12 +23,30 @@ export default function Home() {
         </header>
 
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="aspect-square bg-gradient-to-br from-pink-200 to-pink-300 rounded-2xl shadow-lg flex items-center justify-center">
-              <p className="text-gray-600 text-center px-6">Foto do casal 1</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="relative overflow-hidden rounded-2xl shadow-lg h-80">
+              <Image
+                src={casal1}
+                alt="Casal feliz 1"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="aspect-square bg-gradient-to-br from-teal-200 to-teal-300 rounded-2xl shadow-lg flex items-center justify-center">
-              <p className="text-gray-600 text-center px-6">Foto do casal 2</p>
+            <div className="relative overflow-hidden rounded-2xl shadow-lg h-80">
+              <Image
+                src={casal2}
+                alt="Casal feliz 2"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-lg h-80">
+              <Image
+                src={casal3}
+                alt="Casal feliz 3"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
 
@@ -34,14 +56,20 @@ export default function Home() {
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Somos [Nome do Noivo] e [Nome da Noiva], e estamos muito felizes em compartilhar 
-                este momento especial com vocês. Nossa história começou há [X anos], quando nos 
-                conhecemos [como vocês se conheceram].
+                Somos Daniel e Laiana, Nossa história começou de forma simples, 
+                mas cheia de significado — como quem não imagina que um encontro pode mudar tudo. 
+                Entre conversas, risadas e descobertas, fomos construindo um sentimento verdadeiro, 
+                que cresceu com o tempo e se fortaleceu em cada momento compartilhado.
               </p>
               <p>
-                Desde então, construímos juntos momentos inesquecíveis, superamos desafios e 
-                crescemos lado a lado. Hoje, estamos prontos para dar o próximo passo e oficializar 
-                nosso amor.
+                Aprendemos a caminhar juntos, celebrando as alegrias e enfrentando os desafios lado a lado, 
+                sempre com respeito, carinho e parceria. Cada etapa vivida nos trouxe até aqui, 
+                mais unidos e certos de que queremos escrever todos os próximos capítulos juntos.
+              </p>
+              <p>
+                Hoje, damos um novo passo em nossa jornada, cheios de amor, esperança e gratidão 
+                por tudo o que vivemos e por tudo o que ainda está por vir. 
+                E ter vocês ao nosso lado nesse momento torna tudo ainda mais especial.
               </p>
               <p>
                 A presença de cada um de vocês é o maior presente que poderíamos receber. 
@@ -49,10 +77,6 @@ export default function Home() {
                 itens que nos ajudarão a construir nosso novo lar.
               </p>
             </div>
-          </div>
-
-          <div className="aspect-video bg-gradient-to-br from-pink-100 to-teal-100 rounded-2xl shadow-lg flex items-center justify-center">
-            <p className="text-gray-600 text-center px-6">Foto do casal 3</p>
           </div>
         </section>
 

@@ -16,20 +16,14 @@ export default function PaymentPage() {
   const giftPrice = searchParams.get("price") || "R$ 0,00";
   const giftId = searchParams.get("id") || "";
 
-  const pixKeysRef = useRef([
-    "exemplo1@pix.com",
-    "11987654321",
-    "12345678000190",
-    "exemplo2@pix.com",
-    "21987654321"
-  ]);
+  const pixKeyValue = "00020126580014BR.GOV.BCB.PIX0136efc40199-2587-4b80-8b3f-7daebc9559185204000053039865802BR5919Daniel Araujo Costa6009SAO PAULO62140510Qw4QAdKKFZ63048133";
 
   useEffect(() => {
-    const randomKey = pixKeysRef.current[Math.floor(Math.random() * pixKeysRef.current.length)];
-    setPixKey(randomKey);
+    setPixKey(pixKeyValue);
 
-    const priceValue = giftPrice.replace("R$", "").replace(",", ".").trim();
-    const pixPayload = `PIX|Chave:${randomKey}|Valor:${priceValue}|Presente:${giftName}`;
+    // Se precisar ajustar valor dinamicamente, gere payload EMVco com valor a partir de giftPrice.
+    // Aqui usamos a string completa fornecida pelo usuário (inclui CRC) para testar diretamente.
+    const pixPayload = pixKeyValue;
 
     QRCode.toDataURL(pixPayload, {
       width: 300,
