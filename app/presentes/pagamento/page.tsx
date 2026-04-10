@@ -52,7 +52,7 @@ export default function PaymentPage() {
               1. Abra o aplicativo do banco ou carteira digital que suporta pagamentos via PIX no seu celular.
             </p>
             <p className="text-gray-600">
-              2. Selecione a opção "Pagar com QR Code" ou "Pagar com Chave PIX Copia e Cola"
+              2. Selecione a opção &quot;Pagar com QR Code&quot; ou &quot;Pagar com Chave PIX Copia e Cola&quot;
             </p>
             <p className="text-gray-600">
               3. Escaneie o QR Code abaixo ou copie e cole a chave PIX
